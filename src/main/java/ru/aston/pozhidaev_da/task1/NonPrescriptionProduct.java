@@ -6,6 +6,6 @@ public class NonPrescriptionProduct extends AbstractProduct {
     }
     @Override
     public double calculateDiscount() {
-        return price - (price/10);
+        return price - (price/11);
     }
 }
