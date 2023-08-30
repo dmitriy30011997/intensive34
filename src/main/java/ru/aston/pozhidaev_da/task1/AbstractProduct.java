@@ -10,7 +10,6 @@ public abstract class AbstractProduct {
         this.price = price;
         this.user = user;
     }
-
     public abstract double calculateDiscount();
 }
 
