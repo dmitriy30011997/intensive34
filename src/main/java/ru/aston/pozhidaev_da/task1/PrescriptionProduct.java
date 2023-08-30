@@ -7,6 +7,6 @@ public class PrescriptionProduct extends AbstractProduct {
 
     @Override
     public double calculateDiscount() {
-        return price - (price/8);
+        return price - (price/9);
     }
 }

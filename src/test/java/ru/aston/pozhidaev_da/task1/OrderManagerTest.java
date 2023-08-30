@@ -1,10 +1,10 @@
 package ru.aston.pozhidaev_da.task1;
 
+import java.util.List;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.Assert;
 import java.util.ArrayList;
-import java.util.List;
 
 public class OrderManagerTest {
     private OrderManager orderManager;

@@ -4,9 +4,8 @@ public class NonPrescriptionProduct extends AbstractProduct {
     public NonPrescriptionProduct(String name, double price, User user) {
         super(name, price, user);
     }
-
     @Override
     public double calculateDiscount() {
-        return price - (price/10);
+        return price - (price/11);
     }
 }
