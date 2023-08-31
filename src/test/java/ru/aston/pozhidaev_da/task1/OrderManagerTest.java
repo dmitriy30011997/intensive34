@@ -42,5 +42,6 @@ public class OrderManagerTest {
         expected.add(product2);
         expected.add(product1);
         expected.add(product3);
+        Assert.assertEquals(expected, orderManager.getOrders());
     }
 }
