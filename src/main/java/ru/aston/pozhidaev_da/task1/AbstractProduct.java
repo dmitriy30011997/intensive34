@@ -1,8 +1,9 @@
 package ru.aston.pozhidaev_da.task1;
 
 public abstract class AbstractProduct {
-    protected String name;
     protected double price;
+    protected String name;
+
     protected User user;
 
     public AbstractProduct(String name, double price, User user) {

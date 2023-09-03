@@ -1,8 +1,9 @@
 package ru.aston.pozhidaev_da.task1;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
+
 
 public class OrderManager {
     private List<AbstractProduct> orders;
