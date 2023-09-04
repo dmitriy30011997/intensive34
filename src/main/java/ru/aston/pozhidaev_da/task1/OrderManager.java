@@ -12,9 +12,10 @@ public class OrderManager {
         this.orders = new ArrayList<>();
     }
 
-    public void addOrder(Order order, OrderType orderType) {
-        order.setOrderType(orderType);
-        orders.add(order);
+    public void addOrder(AbstractProduct product) throws CustomOrderException {
+        if (product.price <= 0) {
+            throw new CustomOrderException(1, "Invalid product price: Price must be bigger than 0.");
+        }
     }
 
     public double calculateTotalPrice() {

@@ -13,7 +13,32 @@ public class OrderManagerTest {
     public void setUp() {
         orderManager = new OrderManager();
     }
+    @Test
+    public void testAddOrderWithInvalidPrice() {
+        try {
+            // Попытка добавить продукт с недопустимой ценой (<= 0)
+            AbstractProduct product = new NonPrescriptionProduct("Product 1", -10.0, new User(20, "John", "Doe"));
+            orderManager.addOrder(product);
+            Assert.fail("Expected CustomOrderException to be thrown");
+        } catch (CustomOrderException e) {
+            Assert.assertEquals(1, e.getErrorCode());
+            Assert.assertEquals("Invalid product price: Price must be greater than 0.", e.getErrorMessage());
+        }
+    }
 
+    @Test
+    public void testApplyDiscountWithInvalidDiscount() {
+        try {
+            // Попытка применить скидку, которая делает цену отрицательной
+            AbstractProduct product = new NonPrescriptionProduct("Product 2", 5.0, new User(25, "Alice", "Smith"));
+            double discount = 10.0;
+            orderManager.applyDiscount(product, discount);
+            Assert.fail("Expected CustomOrderException to be thrown");
+        } catch (CustomOrderException e) {
+            Assert.assertEquals(2, e.getErrorCode());
+            Assert.assertEquals("Invalid discount: Discounted price cannot be zero or negative.", e.getErrorMessage());
+        }
+    }
     @Test
     public void testAddOrder() {
         AbstractProduct product = new NonPrescriptionProduct("Product 1", 10.0, new User(20, "John", "Doe"));
