@@ -59,7 +59,6 @@ public class OrderManagerTest {
         orderManager.addOrder(product2);
         Assert.assertEquals(30.0, orderManager.calculateTotalPrice(), 0.001);
     }
-
     @Test
     public void testSortOrdersByUserSurname() {
         AbstractProduct product1 = new NonPrescriptionProduct("Product 1", 10.0, new User(20, "John", "Doe"));
