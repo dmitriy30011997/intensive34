@@ -170,6 +170,6 @@ public class OrderManagerTest {
 
         // Удаление элемента
         set.remove(2);
-        ;
+        assertFalse(set.contains(2));
     }
 }
